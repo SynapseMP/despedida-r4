@@ -436,6 +436,14 @@ section{padding:110px 24px;position:relative;max-width:1240px;margin:0 auto}
 }
 .allergy-chip:hover{border-color:var(--gold);color:var(--gold)}
 .allergy-chip.active{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.allergy-chip-none{
+  flex-basis:100%;text-align:center;padding:10px 16px;
+  border-color:var(--gold);color:var(--gold);font-weight:600;
+  letter-spacing:.02em;
+}
+.allergy-chip-none::before{content:"✓ ";opacity:.7}
+.allergy-chip-none.active{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.allergy-chip-none.active::before{opacity:1}
 .allergy-submit{align-self:center;margin-top:4px}
 .allergy-ok{
   text-align:center;padding:24px 16px;
@@ -1006,6 +1014,7 @@ footer .hashtag{color:var(--accent-soft);font-family:'JetBrains Mono',monospace;
         <input type="text" class="hp-field" id="allergyHp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <input type="text" id="allergyName" placeholder="Tu nombre" required maxlength="60" />
         <div class="chip-group">
+          <button type="button" class="allergy-chip allergy-chip-none" data-val="Ninguna" data-none>Sin alergias ni intolerancias</button>
           <button type="button" class="allergy-chip" data-val="Gluten">Sin gluten</button>
           <button type="button" class="allergy-chip" data-val="Lactosa">Sin lactosa</button>
           <button type="button" class="allergy-chip" data-val="Frutos secos">Frutos secos</button>
@@ -1518,9 +1527,19 @@ document.getElementById('rsvpRefresh').addEventListener('click', loadRsvpCount);
    ALERGIAS / INTOLERANCIAS
    ============================================================ */
 
-// Chips toggle
+// Chips toggle — "Sin alergias" es exclusiva con el resto
 document.querySelectorAll('.allergy-chip').forEach(chip=>{
-  chip.addEventListener('click',()=> chip.classList.toggle('active'));
+  chip.addEventListener('click',()=>{
+    const isNone = chip.hasAttribute('data-none');
+    if(isNone){
+      const wasActive = chip.classList.contains('active');
+      document.querySelectorAll('.allergy-chip').forEach(c=>c.classList.remove('active'));
+      if(!wasActive) chip.classList.add('active');
+    } else {
+      document.querySelector('.allergy-chip[data-none]')?.classList.remove('active');
+      chip.classList.toggle('active');
+    }
+  });
 });
 
 // Recuperar si ya envió
