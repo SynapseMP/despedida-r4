@@ -1,0 +1,27 @@
+# Solo se publica lo necesario para GitHub Pages
+
+# Generadores y artefactos locales
+*.py
+*.pdf
+qr-invitacion.png
+
+# Backend del Apps Script (no corre en Pages)
+apps-script-votos.js
+
+# Memoria local de Claude / scratch
+memory/
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log

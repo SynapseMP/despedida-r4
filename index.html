@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Despedida R4 · Radiodiagnóstico · 15 Mayo 2026</title>
+<meta name="description" content="Invitación a la fiesta de despedida de los R4 de Radiodiagnóstico. Hotel Alameda Palace, Salamanca. 15 de mayo de 2026, 20:00." />
+<meta property="og:title" content="Despedida R4 Radiodiagnóstico" />
+<meta property="og:description" content="15 · Mayo · 2026 · Hotel Alameda Palace · Salamanca" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESPEDIDA R4 · RADIODIAGNÓSTICO
+   Paleta radiológica: negro profundo, plata, oro clínico, rojo contraste
+   ============================================================ */
+:root{
+  --bg:#0a0c10;
+  --bg-soft:#111419;
+  --bg-card:#15191f;
+  --ink:#f2f2f2;
+  --ink-soft:#b5b8bd;
+  --ink-dim:#7a7e86;
+  --line:#24272e;
+  --gold:#d4af37;
+  --gold-soft:#efd98a;
+  --accent:#e63946;
+  --accent-soft:#ff6b75;
+  --scan:#7dd3fc;
+  --ok:#4ade80;
+  --shadow:0 30px 80px -20px rgba(0,0,0,.7);
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:.01em;line-height:1.15}
+.mono{font-family:'JetBrains Mono',monospace;letter-spacing:.02em}
+
+/* ----------------- NAV ----------------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  backdrop-filter:blur(14px);
+  background:rgba(10,12,16,.72);
+  border-bottom:1px solid var(--line);
+  padding:14px 24px;
+  display:flex;justify-content:space-between;align-items:center;
+  transition:transform .3s ease;
+}
+nav.hidden{transform:translateY(-100%)}
+nav .brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gold);letter-spacing:.15em;text-transform:uppercase}
+nav .brand span{color:var(--ink-soft);font-size:.75rem;margin-left:8px;letter-spacing:.2em}
+nav .links{display:flex;gap:22px}
+nav .links a{color:var(--ink-soft);text-decoration:none;font-size:.85rem;letter-spacing:.04em;transition:color .2s}
+nav .links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:600;font-size:.82rem;text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:transform .2s, box-shadow .2s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px -10px var(--gold)}
+@media(max-width:780px){nav .links{display:none}}
+
+/* ----------------- HERO ----------------- */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  position:relative;overflow:hidden;
+  padding:100px 24px 60px;
+  text-align:center;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(212,175,55,.12), transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(230,57,70,.10), transparent 55%),
+    radial-gradient(circle at 50% 100%, rgba(125,211,252,.06), transparent 60%);
+  pointer-events:none;
+}
+.scanline{
+  position:absolute;inset:0;pointer-events:none;opacity:.25;
+  background:repeating-linear-gradient(0deg,transparent 0,transparent 2px,rgba(125,211,252,.04) 3px,rgba(125,211,252,.04) 4px);
+  animation:scan 8s linear infinite;
+}
+@keyframes scan{0%{transform:translateY(-10px)}100%{transform:translateY(10px)}}
+.hero-tag{
+  font-family:'JetBrains Mono',monospace;
+  color:var(--scan);
+  font-size:.75rem;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  margin-bottom:28px;
+  opacity:0;animation:fadeUp .9s .2s forwards;
+  border:1px solid rgba(125,211,252,.3);
+  padding:8px 18px;border-radius:999px;
+  background:rgba(125,211,252,.04);
+}
+.hero-tag::before{content:"◉ ";color:var(--accent)}
+.hero h1{
+  font-size:clamp(2.8rem,8vw,6.5rem);
+  font-weight:400;
+  margin-bottom:18px;
+  opacity:0;animation:fadeUp 1s .35s forwards;
+}
+.hero h1 em{color:var(--gold);font-style:italic;font-weight:600}
+.hero .subtitle{
+  color:var(--ink-soft);
+  font-size:clamp(1rem,1.6vw,1.25rem);
+  max-width:640px;
+  margin:0 auto 12px;
+  opacity:0;animation:fadeUp 1s .5s forwards;
+}
+.hero .specialty{
+  font-family:'JetBrains Mono',monospace;
+  color:var(--gold-soft);
+  font-size:.85rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  margin-top:6px;
+  opacity:0;animation:fadeUp 1s .6s forwards;
+}
+.hero-meta{
+  display:flex;gap:40px;flex-wrap:wrap;justify-content:center;
+  margin-top:42px;
+  opacity:0;animation:fadeUp 1s .75s forwards;
+}
+.hero-meta .item{text-align:center}
+.hero-meta .item .label{font-size:.7rem;color:var(--ink-dim);letter-spacing:.3em;text-transform:uppercase;margin-bottom:6px}
+.hero-meta .item .value{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--ink)}
+.hero-meta .divider{width:1px;background:var(--line)}
+@media(max-width:640px){.hero-meta .divider{display:none}.hero-meta{gap:22px}}
+
+/* Countdown */
+.countdown{
+  display:flex;gap:14px;justify-content:center;margin-top:48px;flex-wrap:wrap;
+  opacity:0;animation:fadeUp 1s .9s forwards;
+}
+.cd-box{
+  background:rgba(255,255,255,.02);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:18px 22px;
+  min-width:92px;
+  backdrop-filter:blur(8px);
+}
+.cd-box .n{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--gold);line-height:1}
+.cd-box .l{font-size:.68rem;color:var(--ink-dim);letter-spacing:.25em;text-transform:uppercase;margin-top:6px}
+.hero-cta-wrap{margin-top:44px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp 1s 1.05s forwards}
+.btn{
+  display:inline-block;padding:15px 32px;border-radius:999px;text-decoration:none;
+  font-size:.88rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
+  transition:all .25s;cursor:pointer;border:none;font-family:inherit;
+}
+.btn-primary{background:var(--gold);color:var(--bg)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 35px -10px var(--gold)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* Informe badge */
+.report-stamp{
+  position:absolute;top:130px;right:36px;
+  border:1px solid var(--accent);color:var(--accent);
+  padding:8px 12px;font-family:'JetBrains Mono',monospace;font-size:.65rem;
+  letter-spacing:.2em;text-transform:uppercase;
+  transform:rotate(6deg);opacity:.8;
+  border-radius:4px;
+}
+.report-stamp::before{content:"▸ "}
+@media(max-width:780px){.report-stamp{top:auto;bottom:24px;right:24px;transform:rotate(-4deg)}}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* ----------------- SECTIONS ----------------- */
+section{padding:110px 24px;position:relative;max-width:1240px;margin:0 auto}
+.section-head{text-align:center;margin-bottom:70px}
+.section-head .kicker{
+  font-family:'JetBrains Mono',monospace;
+  color:var(--accent-soft);font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;
+  margin-bottom:14px;
+}
+.section-head .kicker::before{content:"— "}
+.section-head .kicker::after{content:" —"}
+.section-head h2{font-size:clamp(2.2rem,4.5vw,3.5rem);margin-bottom:14px}
+.section-head h2 em{color:var(--gold);font-style:italic}
+.section-head p{color:var(--ink-soft);max-width:620px;margin:0 auto;font-size:1.05rem}
+
+/* ----------------- R4 COLLAGE ----------------- */
+.residents{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:6px;
+  max-width:1000px;
+  margin:0 auto;
+}
+.resident{
+  position:relative;
+  overflow:hidden;
+  border-radius:10px;
+  cursor:default;
+}
+.resident:nth-child(1){grid-column:1;grid-row:1}
+.resident:nth-child(2){grid-column:2;grid-row:1}
+.resident:nth-child(3){grid-column:1;grid-row:2}
+.resident:nth-child(4){grid-column:2;grid-row:2}
+.resident-media{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#1a1d24,#0d0f13);
+}
+.resident-media video,.resident-media img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  aspect-ratio:4/5;
+  filter:grayscale(15%) contrast(1.05);
+  transition:transform .6s ease, filter .4s;
+}
+.resident:hover .resident-media video,
+.resident:hover .resident-media img{
+  transform:scale(1.04);filter:grayscale(0%) contrast(1);
+}
+/* gradient overlay for name legibility */
+.resident-media::after{
+  content:"";position:absolute;bottom:0;left:0;right:0;height:45%;
+  background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 100%);
+  pointer-events:none;
+}
+.placeholder-xray{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(125,211,252,.15), transparent 60%),
+    repeating-linear-gradient(90deg,transparent 0,transparent 40px,rgba(255,255,255,.02) 40px,rgba(255,255,255,.02) 41px);
+  color:var(--ink-dim);
+  font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;
+  gap:12px;padding:20px;text-align:center;
+}
+.placeholder-xray svg{opacity:.4;width:60px;height:60px}
+.resident-corner{
+  position:absolute;top:12px;left:12px;z-index:2;
+  font-family:'JetBrains Mono',monospace;font-size:.6rem;
+  color:var(--scan);letter-spacing:.2em;
+  background:rgba(0,0,0,.55);padding:4px 8px;border-radius:3px;
+  border:1px solid rgba(125,211,252,.2);
+}
+.resident-corner::before{content:"◉ "}
+/* Name overlaid on photo */
+.resident-info{
+  position:absolute;bottom:0;left:0;right:0;z-index:2;
+  padding:18px 20px;text-align:left;
+}
+.resident-info h3{font-size:clamp(1.4rem,2.5vw,2rem);margin:0;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.resident-info h3 em{color:var(--gold);font-style:italic}
+@media(max-width:560px){
+  .residents{grid-template-columns:1fr;gap:8px}
+  .resident:nth-child(n){grid-column:1}
+  .resident:nth-child(1){grid-row:1}
+  .resident:nth-child(2){grid-row:2}
+  .resident:nth-child(3){grid-row:3}
+  .resident:nth-child(4){grid-row:4}
+}
+
+/* ----------------- PROGRAMA ----------------- */
+.timeline{
+  max-width:780px;margin:0 auto;position:relative;
+}
+.timeline::before{
+  content:"";position:absolute;left:24px;top:10px;bottom:10px;width:2px;
+  background:linear-gradient(to bottom,var(--gold),var(--accent),transparent);
+}
+.tl-item{
+  display:flex;gap:28px;padding:18px 0 18px 0;position:relative;
+  opacity:0;transform:translateX(-20px);
+  transition:all .7s ease;
+}
+.tl-item.visible{opacity:1;transform:translateX(0)}
+.tl-time{
+  font-family:'JetBrains Mono',monospace;
+  color:var(--gold);font-size:1rem;font-weight:500;
+  min-width:58px;text-align:right;padding-top:2px;
+  position:relative;z-index:1;
+}
+.tl-dot{
+  position:absolute;left:16px;top:22px;
+  width:18px;height:18px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--gold);
+  box-shadow:0 0 0 6px var(--bg), 0 0 20px rgba(212,175,55,.4);
+}
+.tl-body{padding-left:38px;flex:1}
+.tl-body h4{font-size:1.4rem;color:var(--ink);margin-bottom:4px}
+.tl-body p{color:var(--ink-soft);font-size:.95rem}
+
+/* ----------------- MENÚ + VOTACIÓN ----------------- */
+.menu-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:18px;
+}
+.menu-card{
+  background:var(--bg-card);
+  border:2px solid var(--line);
+  border-radius:var(--radius);
+  padding:28px 24px;
+  transition:all .35s;position:relative;overflow:hidden;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;
+}
+.menu-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  transition:height .3s;
+}
+.menu-card:hover{border-color:rgba(212,175,55,.5);transform:translateY(-4px)}
+.menu-card:active{transform:scale(.98)}
+/* — Estado: seleccionado por el usuario — */
+.menu-card.selected{
+  border-color:var(--gold);
+  box-shadow:0 0 40px -10px rgba(212,175,55,.4), inset 0 0 30px -15px rgba(212,175,55,.08);
+}
+.menu-card.selected::before{height:4px;background:linear-gradient(90deg,var(--gold),var(--accent-soft))}
+.menu-card .my-pick{
+  position:absolute;top:14px;right:14px;
+  font-family:'JetBrains Mono',monospace;font-size:.6rem;
+  color:var(--bg);background:var(--ok);
+  padding:4px 10px;border-radius:999px;letter-spacing:.12em;text-transform:uppercase;
+  z-index:2;display:none;
+  animation:popIn .3s ease;
+}
+@keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.menu-card.selected .my-pick{display:block}
+/* — Estado: favorito (más votos) — */
+.menu-fav{
+  position:absolute;top:14px;left:14px;
+  font-family:'JetBrains Mono',monospace;font-size:.6rem;
+  color:var(--bg);background:var(--gold);
+  padding:4px 10px;border-radius:999px;letter-spacing:.12em;text-transform:uppercase;
+  z-index:2;display:none;
+}
+.menu-card.leading .menu-fav{display:block}
+.menu-card.leading{border-color:var(--gold)}
+
+.menu-card .menu-label{
+  font-family:'JetBrains Mono',monospace;
+  color:var(--accent-soft);font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;
+  margin-bottom:8px;
+}
+.menu-card h3{font-size:1.7rem;margin-bottom:4px;color:var(--gold)}
+.menu-card .price{font-family:'JetBrains Mono',monospace;color:var(--ink-soft);font-size:.9rem;margin-bottom:18px}
+.menu-card ul{list-style:none;margin-bottom:14px}
+.menu-card li{
+  padding:8px 0;border-bottom:1px dashed var(--line);
+  color:var(--ink-soft);font-size:.88rem;
+}
+.menu-card li:last-child{border-bottom:none}
+.menu-card .bodega{font-size:.78rem;color:var(--ink-dim);font-style:italic;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+
+/* Barra de voto inline */
+.menu-vote{
+  margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+  display:flex;align-items:center;gap:10px;
+}
+.menu-vote-bar{
+  flex:1;height:8px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden;
+}
+.menu-vote-fill{
+  height:100%;border-radius:99px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-soft));
+  transition:width .8s cubic-bezier(.22,1,.36,1);
+  width:0%;
+}
+.menu-card.leading .menu-vote-fill{background:linear-gradient(90deg,var(--gold),var(--accent-soft))}
+.menu-vote-pct{
+  font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:600;
+  color:var(--gold);min-width:40px;text-align:right;
+}
+.menu-card.leading .menu-vote-pct{color:var(--accent-soft)}
+.menu-vote-count{
+  font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--ink-dim);
+  min-width:15px;text-align:right;
+}
+
+/* Footer de votos */
+.vote-footer{
+  display:flex;justify-content:center;align-items:center;gap:10px;
+  margin-top:24px;
+  font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--ink-dim);
+  letter-spacing:.12em;
+}
+.vote-footer span{color:var(--gold);font-size:1rem;font-weight:600}
+.vote-refresh{
+  color:var(--ink-dim);cursor:pointer;transition:color .2s,transform .3s;
+  font-size:1rem;background:none;border:none;padding:6px;
+  font-family:inherit;line-height:1;
+  min-width:32px;min-height:32px;display:inline-flex;align-items:center;justify-content:center;
+}
+.vote-refresh:hover{color:var(--gold)}
+.vote-refresh.spinning{animation:spin .6s ease}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+.menu-note{
+  text-align:center;margin-top:28px;padding:16px;
+  color:var(--ink-dim);font-size:.84rem;max-width:720px;margin-left:auto;margin-right:auto;
+  background:rgba(125,211,252,.04);border:1px solid rgba(125,211,252,.15);border-radius:12px;
+}
+.menu-note::before{content:"◉ ";color:var(--scan)}
+
+/* ----------------- ALERGIAS ----------------- */
+.allergy-box{
+  max-width:680px;margin:0 auto;
+  background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 28px;position:relative;overflow:hidden;
+}
+.allergy-box::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--accent-soft),var(--gold));
+}
+.allergy-form{display:flex;flex-direction:column;gap:12px}
+.allergy-form input,.allergy-form textarea{
+  width:100%;padding:13px 16px;background:var(--bg);
+  border:1px solid var(--line);border-radius:12px;color:var(--ink);
+  font-family:inherit;font-size:.92rem;transition:border-color .2s;
+}
+.allergy-form input:focus,.allergy-form textarea:focus{outline:none;border-color:var(--gold)}
+.allergy-form textarea{min-height:80px;resize:vertical}
+.allergy-form .chip-group{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0}
+.allergy-chip{
+  padding:7px 14px;border-radius:999px;font-size:.8rem;
+  border:1px solid var(--line);color:var(--ink-soft);
+  cursor:pointer;transition:all .2s;
+  -webkit-tap-highlight-color:transparent;user-select:none;
+  background:transparent;font-family:inherit;
+}
+.allergy-chip:hover{border-color:var(--gold);color:var(--gold)}
+.allergy-chip.active{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.allergy-submit{align-self:center;margin-top:4px}
+.allergy-ok{
+  text-align:center;padding:24px 16px;
+  color:var(--ok);font-size:.95rem;
+  display:none;
+}
+.allergy-ok .ok-icon{font-size:2rem;display:block;margin-bottom:8px}
+.allergy-ok .ok-edit{
+  color:var(--ink-dim);font-size:.78rem;cursor:pointer;
+  text-decoration:underline;margin-top:8px;display:inline-block;
+}
+.allergy-ok .ok-edit:hover{color:var(--gold)}
+
+/* ----------------- MOBILE ----------------- */
+@media(max-width:640px){
+  section{padding:70px 16px}
+  .section-head{margin-bottom:40px}
+  .section-head h2{font-size:clamp(1.8rem,6vw,2.4rem)}
+  .section-head p{font-size:.92rem}
+  .hero{padding:80px 16px 40px}
+  .hero .subtitle{font-size:.95rem}
+  .hero-meta{gap:18px}
+  .hero-meta .item .value{font-size:1.2rem}
+  .countdown{gap:8px}
+  .cd-box{padding:12px 14px;min-width:68px}
+  .cd-box .n{font-size:2rem}
+  .hero-cta-wrap{flex-direction:column;align-items:center}
+  .menu-grid{grid-template-columns:1fr;gap:14px}
+  .menu-card{padding:22px 18px}
+  .menu-card h3{font-size:1.4rem}
+  .menu-card:hover{transform:none}
+  .tl-time{font-size:.88rem;min-width:48px}
+  .tl-body h4{font-size:1.15rem}
+  .details-grid{grid-template-columns:1fr;gap:20px}
+  .map-wrap,.map-wrap iframe{min-height:280px}
+  .info-box{padding:22px 18px}
+  /* Galería usa sus propios breakpoints (bloque GALERÍA · MOSAICO) */
+  .sig-form{padding:0}
+  .signatures{padding:30px 18px}
+  .rsvp-box{padding:28px 18px}
+  footer{padding:34px 16px 24px}
+}
+
+/* ----------------- GALERÍA · MASONRY ----------------- */
+/* Cada foto conserva su altura natural — sin recortes */
+.gallery-grid{
+  column-count:3;
+  column-gap:10px;
+  /* fallback */
+  display:block;
+}
+.gallery-grid .g-item{
+  display:block;width:100%;
+  margin:0 0 10px;
+  break-inside:avoid;
+  page-break-inside:avoid;
+  -webkit-column-break-inside:avoid;
+  position:relative;overflow:hidden;
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  cursor:zoom-in;
+  padding:0;font-family:inherit;color:inherit;
+  transition:transform .35s ease, border-color .25s, box-shadow .35s;
+  -webkit-tap-highlight-color:transparent;
+  min-height:80px;
+}
+.gallery-grid .g-item:hover,.gallery-grid .g-item:focus-visible{
+  border-color:var(--gold);
+  transform:translateY(-2px);
+  box-shadow:0 14px 32px -12px rgba(0,0,0,.65);
+  z-index:2;outline:none;
+}
+.gallery-grid .g-item img{
+  width:100%;height:auto;display:block;
+  filter:grayscale(15%) contrast(1.04);
+  transition:transform .8s cubic-bezier(.22,1,.36,1), filter .4s, opacity .5s;
+  opacity:0;
+}
+.gallery-grid .g-item img.loaded{opacity:1}
+.gallery-grid .g-item:hover img{transform:scale(1.04);filter:grayscale(0%) contrast(1)}
+
+/* Esqueleto sutil mientras carga */
+.gallery-grid .g-item::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(125,211,252,.06), transparent 70%),
+    repeating-linear-gradient(90deg,transparent 0,transparent 28px,rgba(255,255,255,.02) 28px,rgba(255,255,255,.02) 29px);
+}
+
+/* Etiqueta radiológica al hover */
+.g-tag{
+  position:absolute;top:10px;left:10px;z-index:2;
+  font-family:'JetBrains Mono',monospace;font-size:.58rem;
+  color:var(--scan);letter-spacing:.18em;text-transform:uppercase;
+  background:rgba(0,0,0,.62);padding:4px 8px;border-radius:3px;
+  border:1px solid rgba(125,211,252,.25);
+  opacity:0;transform:translateY(-4px);transition:all .3s;
+  pointer-events:none;
+}
+.g-tag::before{content:"◉ ";color:var(--accent)}
+.g-grad{
+  position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 45%);
+  opacity:0;transition:opacity .3s;
+}
+.g-zoom{
+  position:absolute;bottom:10px;right:12px;z-index:2;
+  color:var(--gold);font-size:.95rem;
+  opacity:0;transform:translateY(4px);transition:all .3s;
+  font-family:'JetBrains Mono',monospace;letter-spacing:.05em;
+  pointer-events:none;
+}
+.g-item:hover .g-tag,.g-item:focus-visible .g-tag,
+.g-item:hover .g-zoom,.g-item:focus-visible .g-zoom{opacity:1;transform:translateY(0)}
+.g-item:hover .g-grad,.g-item:focus-visible .g-grad{opacity:1}
+
+/* En móvil etiqueta y zoom siempre visibles (sin hover) */
+@media(hover:none){
+  .g-tag,.g-zoom,.g-grad{opacity:1!important;transform:none!important}
+  .g-grad{opacity:.7!important}
+}
+
+/* Breakpoints masonry */
+@media(max-width:900px){.gallery-grid{column-count:3;column-gap:8px}.gallery-grid .g-item{margin-bottom:8px}}
+@media(max-width:640px){.gallery-grid{column-count:2;column-gap:6px}.gallery-grid .g-item{margin-bottom:6px}}
+@media(max-width:380px){.gallery-grid{column-count:1}}
+
+/* ----------------- LIGHTBOX ----------------- */
+.lightbox{
+  position:fixed;inset:0;z-index:200;
+  background:rgba(5,7,10,.95);backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;
+  padding:20px;
+  animation:lbFade .25s ease;
+}
+.lightbox.open{display:flex}
+@keyframes lbFade{from{opacity:0}to{opacity:1}}
+.lb-stage{
+  position:relative;max-width:96%;max-height:90vh;
+  display:flex;align-items:center;justify-content:center;
+}
+.lb-img{
+  max-width:96vw;max-height:90vh;object-fit:contain;
+  border-radius:8px;box-shadow:0 30px 80px -20px rgba(0,0,0,.9);
+  display:block;
+}
+.lb-meta{
+  position:absolute;top:18px;left:50%;transform:translateX(-50%);
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;
+  color:var(--scan);letter-spacing:.22em;text-transform:uppercase;
+  background:rgba(0,0,0,.55);padding:6px 14px;border-radius:999px;
+  border:1px solid rgba(125,211,252,.25);
+}
+.lb-close,.lb-prev,.lb-next{
+  position:absolute;background:rgba(255,255,255,.06);
+  border:1px solid var(--line);color:var(--ink);
+  width:46px;height:46px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .2s;font-size:1.3rem;
+  font-family:inherit;line-height:1;
+  -webkit-tap-highlight-color:transparent;
+}
+.lb-close:hover,.lb-prev:hover,.lb-next:hover{
+  background:var(--gold);color:var(--bg);border-color:var(--gold);
+}
+.lb-close{top:18px;right:18px;position:fixed}
+.lb-prev{left:14px;top:50%;transform:translateY(-50%);position:fixed}
+.lb-next{right:14px;top:50%;transform:translateY(-50%);position:fixed}
+@media(max-width:560px){
+  .lb-prev,.lb-next,.lb-close{width:42px;height:42px;font-size:1.15rem}
+  .lb-prev{left:8px}
+  .lb-next{right:8px}
+  .lb-close{top:12px;right:12px}
+  .lb-meta{top:12px;font-size:.65rem;letter-spacing:.18em;padding:5px 12px}
+}
+
+/* ----------------- MAPA / DETALLES ----------------- */
+.details-grid{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:34px;
+}
+@media(max-width:860px){.details-grid{grid-template-columns:1fr}}
+.map-wrap{
+  border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+  background:var(--bg-card);min-height:420px;
+}
+.map-wrap iframe{width:100%;height:100%;min-height:420px;filter:grayscale(40%) invert(92%) hue-rotate(180deg)}
+.info-box{
+  background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px;
+}
+.info-box h3{font-size:1.7rem;color:var(--gold);margin-bottom:8px}
+.info-box .address{color:var(--ink-soft);margin-bottom:22px;font-size:.95rem}
+.info-box .detail{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.info-box .detail:last-child{border-bottom:none}
+.info-box .detail .icon{
+  flex:0 0 36px;height:36px;border-radius:50%;
+  background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);
+  display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:600;
+}
+.info-box .detail .txt{flex:1}
+.info-box .detail .txt strong{display:block;margin-bottom:2px;color:var(--ink)}
+.info-box .detail .txt span{color:var(--ink-soft);font-size:.88rem}
+
+/* ----------------- LIBRO DE FIRMAS ----------------- */
+.signatures{
+  background:linear-gradient(135deg,rgba(212,175,55,.04),rgba(230,57,70,.04));
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:50px 34px;
+}
+.sig-form{max-width:620px;margin:0 auto 34px;display:flex;flex-direction:column;gap:14px}
+.sig-form input,.sig-form textarea{
+  width:100%;padding:14px 18px;background:var(--bg);
+  border:1px solid var(--line);border-radius:12px;color:var(--ink);
+  font-family:inherit;font-size:.95rem;transition:border-color .2s;
+}
+.sig-form input:focus,.sig-form textarea:focus{outline:none;border-color:var(--gold)}
+.sig-form textarea{min-height:110px;resize:vertical}
+.sig-form button{align-self:center}
+.sig-wall{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;max-width:900px;margin:0 auto;
+}
+.sig-note{
+  background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:18px 20px;
+  position:relative;
+}
+.sig-note::before{
+  content:"»";position:absolute;top:-6px;left:14px;
+  color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:2.2rem;line-height:1;
+}
+.sig-note p{color:var(--ink-soft);font-style:italic;font-size:.95rem;margin-bottom:10px;padding-left:16px}
+.sig-note .author{font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase}
+.sig-empty{
+  text-align:center;color:var(--ink-dim);padding:24px;font-style:italic;
+}
+
+/* ----------------- RSVP ----------------- */
+.rsvp-box{
+  background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:40px 30px;text-align:center;
+}
+.rsvp-box p{color:var(--ink-soft);margin-bottom:26px;max-width:560px;margin-left:auto;margin-right:auto}
+
+/* honeypot — campo trampa invisible para bots */
+.hp-field{position:absolute;left:-9999px;top:auto;width:1px;height:1px;opacity:0;pointer-events:none}
+
+/* foco visible para accesibilidad teclado */
+.menu-card:focus-visible,.vote-refresh:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ----------------- FOOTER ----------------- */
+footer{
+  border-top:1px solid var(--line);
+  padding:50px 24px 34px;text-align:center;margin-top:40px;
+  color:var(--ink-dim);
+}
+footer .sig{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:1.4rem;font-style:italic;margin-bottom:10px}
+footer .contact{font-family:'JetBrains Mono',monospace;font-size:.85rem;letter-spacing:.1em;margin-bottom:18px}
+footer .contact a{color:var(--ink-soft);text-decoration:none;border-bottom:1px dashed var(--line)}
+footer .contact a:hover{color:var(--gold)}
+footer .hashtag{color:var(--accent-soft);font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.2em}
+
+/* Utility */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease, transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav id="nav">
+  <div class="brand">R4 · Radiodx</div>
+  <div class="links">
+    <a href="#r4">Los R4</a>
+    <a href="#programa">Programa</a>
+    <a href="#menu">Menú</a>
+    <a href="#lugar">Lugar</a>
+    <a href="#firmas">Mensajes</a>
+  </div>
+  <a class="nav-cta" href="#rsvp">Confirmar</a>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<header class="hero">
+  <div class="scanline"></div>
+  <div class="report-stamp">Informe · Urgente</div>
+
+  <div class="hero-tag">Hallazgo incidental · despedida imperdible</div>
+
+  <h1>Despedida de los <em>R4</em></h1>
+  <p class="subtitle">Cuatro años de guardias, cafés de máquina y sesiones clínicas a las ocho de la mañana se despiden oficialmente. Estás citad@ para certificar el alta.</p>
+  <div class="specialty">Servicio de Radiodiagnóstico · Hospital Universitario de Salamanca</div>
+  <div class="specialty" style="margin-top:6px;font-size:.72rem;opacity:.7">Promoción 2022 – 2026</div>
+
+  <div class="hero-meta">
+    <div class="item">
+      <div class="label">Fecha</div>
+      <div class="value">15 · Mayo · 2026</div>
+    </div>
+    <div class="divider"></div>
+    <div class="item">
+      <div class="label">Hora</div>
+      <div class="value">20:00 h</div>
+    </div>
+    <div class="divider"></div>
+    <div class="item">
+      <div class="label">Lugar</div>
+      <div class="value">Hotel Alameda Palace</div>
+    </div>
+  </div>
+
+  <div class="countdown" id="countdown" aria-label="Cuenta atrás">
+    <div class="cd-box"><div class="n" id="cd-d">00</div><div class="l">Días</div></div>
+    <div class="cd-box"><div class="n" id="cd-h">00</div><div class="l">Horas</div></div>
+    <div class="cd-box"><div class="n" id="cd-m">00</div><div class="l">Min</div></div>
+    <div class="cd-box"><div class="n" id="cd-s">00</div><div class="l">Seg</div></div>
+  </div>
+
+  <div class="hero-cta-wrap">
+    <a href="#rsvp" class="btn btn-primary">Confirmar asistencia</a>
+    <a href="#r4" class="btn btn-ghost">Conocer a los R4</a>
+  </div>
+</header>
+
+<!-- ============================================================
+     LOS 4 R4
+     ============================================================ -->
+<section id="r4">
+  <div class="section-head reveal">
+    <div class="kicker">Hallazgos principales</div>
+    <h2>Los <em>cuatro</em> protagonistas</h2>
+    <p>Cuatro años de proyecciones, cortes axiales y correlación clínica les han traído hasta aquí.</p>
+  </div>
+
+  <div class="residents">
+
+    <!-- NADIA -->
+    <article class="resident reveal">
+      <div class="resident-media">
+        <div class="resident-corner">ID · 001 / NADIA</div>
+        <img class="resident-img" src="fotos/NADIA.png" alt="Nadia">
+        <div class="placeholder-xray" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>
+          Imagen pendiente
+        </div>
+      </div>
+      <div class="resident-info">
+        <h3><em>Nadia</em></h3>
+      </div>
+    </article>
+
+    <!-- GUILLERMO -->
+    <article class="resident reveal">
+      <div class="resident-media">
+        <div class="resident-corner">ID · 002 / GUILLERMO</div>
+        <img class="resident-img" src="fotos/Guillermo.png" alt="Guillermo">
+        <div class="placeholder-xray" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 20V4l8 16V4l8 16V4"/></svg>
+          Imagen pendiente
+        </div>
+      </div>
+      <div class="resident-info">
+        <h3><em>Guillermo</em></h3>
+      </div>
+    </article>
+
+    <!-- JESÚS -->
+    <article class="resident reveal">
+      <div class="resident-media">
+        <div class="resident-corner">ID · 003 / JESÚS</div>
+        <img class="resident-img" src="fotos/JESUS.png" alt="Jesús">
+        <div class="placeholder-xray" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg>
+          Imagen pendiente
+        </div>
+      </div>
+      <div class="resident-info">
+        <h3><em>Jesús</em></h3>
+      </div>
+    </article>
+
+    <!-- ALEJANDRO -->
+    <article class="resident reveal">
+      <div class="resident-media">
+        <div class="resident-corner">ID · 004 / ALEJANDRO</div>
+        <img class="resident-img" src="fotos/alejandro.png" alt="Alejandro">
+        <div class="placeholder-xray" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 12h16M12 4v16"/></svg>
+          Imagen pendiente
+        </div>
+      </div>
+      <div class="resident-info">
+        <h3><em>Alejandro</em></h3>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     PROGRAMA
+     ============================================================ -->
+<section id="programa">
+  <div class="section-head reveal">
+    <div class="kicker">Protocolo de la noche</div>
+    <h2>Cronograma <em>clínico</em></h2>
+    <p>Del cóctel de bienvenida al "último informe". Pasa el ratón para enterarte de los detalles.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="tl-time">20:00</div>
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <h4>Recepción & cóctel de bienvenida</h4>
+        <p>Brindis inaugural con vistas al Paseo de la Estación. Entrantes fríos, pinchos y una copa de cava para abrir apetito.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-time">21:00</div>
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <h4>Cena de gala</h4>
+        <p>Menú completo en el salón principal del Hotel Alameda Palace. Consulta la sección <a href="#menu" style="color:var(--gold)">Menú</a> para ver los platos.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-time">22:30</div>
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <h4>Discursos & vídeo tributo</h4>
+        <p>Proyección del "caso clínico" de los últimos cuatro años: guardias, rotaciones, anécdotas y algún susto.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-time">23:15</div>
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <h4>Un recuerdo para llevarse</h4>
+        <p>El servicio tiene preparada una sorpresa para Nadia, Guille, Jesús y Ale. Cuatro años dejando huella merecen algo que se pueda guardar para siempre.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-time">00:00</div>
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <h4>Baile & copas</h4>
+        <p>Música, pista y la noche por delante. Las bebidas corren por cuenta de cada uno — el presupuesto se fue en la cena y los regalos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MENÚ
+     ============================================================ -->
+<section id="menu">
+  <div class="section-head reveal">
+    <div class="kicker">Carta del Alameda Palace</div>
+    <h2>Elige tu <em>menú</em></h2>
+    <p>Toca el menú que prefieras para votar. Puedes cambiar tu elección cuando quieras.</p>
+  </div>
+
+  <div class="menu-grid">
+
+    <div class="menu-card reveal" data-menu="1" role="button" tabindex="0" aria-pressed="false" aria-label="Votar Menú 1: Clásico castellano">
+      <div class="my-pick">tu elección</div>
+      <div class="menu-fav">favorito</div>
+      <div class="menu-label">Menú 1 · 47 €</div>
+      <h3>Clásico castellano</h3>
+      <div class="price">IVA incluido</div>
+      <ul>
+        <li>Emulsión de sopa castellana con viera a la parrilla y velo de ibérico</li>
+        <li>Ensalada de lechugas de temporada con langostinos sobre tartar de tomate y cremoso de aguacate y cilantro</li>
+        <li>Timbal de patata panadera y carrillera ibérica guisada a la antigua</li>
+        <li>Tarta casera de queso al horno con helado de frambuesa</li>
+      </ul>
+      <div class="bodega">Bodega · Vino Blanco D.O. Rueda, Tinto Crianza D.O. Rioja, Cava, agua mineral y café</div>
+      <div class="menu-vote">
+        <div class="menu-vote-bar"><div class="menu-vote-fill"></div></div>
+        <div class="menu-vote-pct">0%</div>
+        <div class="menu-vote-count">0</div>
+      </div>
+    </div>
+
+    <div class="menu-card reveal" data-menu="2" role="button" tabindex="0" aria-pressed="false" aria-label="Votar Menú 2: Ibéricos y cochinillo">
+      <div class="my-pick">tu elección</div>
+      <div class="menu-fav">favorito</div>
+      <div class="menu-label">Menú 2 · 52 €</div>
+      <h3>Ibéricos & cochinillo</h3>
+      <div class="price">IVA incluido</div>
+      <ul>
+        <li>Selección de ibéricos D.O. Guijuelo con queso</li>
+        <li>Pastel de centolla con salsa cocktail de naranja y cebollino, ensalada de germinados y brotes</li>
+        <li>Turnedó de cochinillo confitado a baja temperatura sobre milhojas de patata y panceta</li>
+        <li>Red velvet con helado de chocolate</li>
+      </ul>
+      <div class="bodega">Bodega · Vino Blanco D.O. Rueda, Tinto Crianza D.O. Rioja, Cava, agua mineral y café</div>
+      <div class="menu-vote">
+        <div class="menu-vote-bar"><div class="menu-vote-fill"></div></div>
+        <div class="menu-vote-pct">0%</div>
+        <div class="menu-vote-count">0</div>
+      </div>
+    </div>
+
+    <div class="menu-card reveal" data-menu="3" role="button" tabindex="0" aria-pressed="false" aria-label="Votar Menú 3: Pato y lubina">
+      <div class="my-pick">tu elección</div>
+      <div class="menu-fav">favorito</div>
+      <div class="menu-label">Menú 3 · 55 €</div>
+      <h3>Pato & lubina</h3>
+      <div class="price">IVA incluido</div>
+      <ul>
+        <li>Ensalada de hojas verdes con fruta de temporada y vinagreta de frutos rojos</li>
+        <li>Arroz meloso de magret de pato con boletus y gel de maíz</li>
+        <li>Lubina asada al horno con vinagreta tibia de cítricos sobre nido de calabacín</li>
+        <li>Mousse de chocolate negro, crujiente de praliné de avellana y helado de stracciatella</li>
+      </ul>
+      <div class="bodega">Bodega · Vino Blanco D.O. Rueda, Tinto Crianza D.O. Rioja, Cava, agua mineral y café</div>
+      <div class="menu-vote">
+        <div class="menu-vote-bar"><div class="menu-vote-fill"></div></div>
+        <div class="menu-vote-pct">0%</div>
+        <div class="menu-vote-count">0</div>
+      </div>
+    </div>
+
+    <div class="menu-card reveal" data-menu="4" role="button" tabindex="0" aria-pressed="false" aria-label="Votar Menú 4: Bacalao, marisco y entrecot">
+      <div class="my-pick">tu elección</div>
+      <div class="menu-fav">favorito</div>
+      <div class="menu-label">Menú 4 · 60 €</div>
+      <h3>Bacalao, marisco & entrecot</h3>
+      <div class="price">IVA incluido</div>
+      <ul>
+        <li>Ensalada fría de brotes y lechugas de temporada con lascas de bacalao confitado en aceite de ajos, pimientos asados y pil-pil de hongos</li>
+        <li>Canelones rellenos de marisco, sobre coulis de tomate y salsa de queso</li>
+        <li>Entrecot de ternera a la plancha con su jugo emulsionado y milhojas de patata</li>
+        <li>Coulant de dulce de leche y helado de manzana</li>
+      </ul>
+      <div class="bodega">Bodega · Vino Blanco D.O. Rueda, Tinto Crianza D.O. Rioja, Cava, agua mineral y café</div>
+      <div class="menu-vote">
+        <div class="menu-vote-bar"><div class="menu-vote-fill"></div></div>
+        <div class="menu-vote-pct">0%</div>
+        <div class="menu-vote-count">0</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="vote-footer">
+    <span id="voteTotal">0</span> votos totales
+    <button type="button" class="vote-refresh" id="voteRefresh" title="Actualizar ahora" aria-label="Actualizar votos">&#x21bb;</button>
+  </div>
+  <p class="menu-note">Tu voto se guarda automáticamente.</p>
+
+  <!-- ALERGIAS / INTOLERANCIAS -->
+  <div style="margin-top:60px" id="alergias">
+    <div class="section-head reveal" style="margin-bottom:30px">
+      <div class="kicker">Cuéntanos</div>
+      <h2>¿Alguna <em>alergia</em> o intolerancia?</h2>
+      <p>Si necesitas que el hotel tenga algo en cuenta, indícalo aquí. Lo gestionamos por ti.</p>
+    </div>
+
+    <div class="allergy-box reveal">
+      <form class="allergy-form" id="allergyForm" onsubmit="return sendAllergy(event)">
+        <input type="text" class="hp-field" id="allergyHp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <input type="text" id="allergyName" placeholder="Tu nombre" required maxlength="60" />
+        <div class="chip-group">
+          <button type="button" class="allergy-chip" data-val="Gluten">Sin gluten</button>
+          <button type="button" class="allergy-chip" data-val="Lactosa">Sin lactosa</button>
+          <button type="button" class="allergy-chip" data-val="Frutos secos">Frutos secos</button>
+          <button type="button" class="allergy-chip" data-val="Marisco">Marisco</button>
+          <button type="button" class="allergy-chip" data-val="Vegetariano">Vegetariano</button>
+          <button type="button" class="allergy-chip" data-val="Vegano">Vegano</button>
+        </div>
+        <textarea id="allergyNotes" placeholder="Otros detalles (opcional): alergia al huevo, dieta especial…" maxlength="300"></textarea>
+        <button type="submit" class="btn btn-primary allergy-submit">Enviar</button>
+      </form>
+      <div class="allergy-ok" id="allergyOk">
+        <span class="ok-icon">&#10003;</span>
+        Registrado. El hotel tendrá en cuenta tus indicaciones.
+        <span class="ok-edit" onclick="editAllergy()">Modificar</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================
+     GALERÍA
+     ============================================================ -->
+<section id="galeria">
+  <div class="section-head reveal">
+    <div class="kicker">Archivo · PACS del recuerdo</div>
+    <h2>Cuatro años en <em>una galería</em></h2>
+    <p>Guardias, rotaciones, cumpleaños, sesiones y algún TAC a las 4 a.m. Toca cualquier imagen para ampliarla.</p>
+  </div>
+
+  <div class="gallery-grid" id="galleryGrid">
+    <button type="button" class="g-item tile-a reveal" data-idx="0" aria-label="Ampliar imagen 1 de 15">
+      <span class="g-tag">Est · 001 / 22</span>
+      <img src="fotos/collage/collage-01.jpeg" alt="Recuerdo 1" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕ ampliar</span>
+    </button>
+    <button type="button" class="g-item tile-b reveal" data-idx="1" aria-label="Ampliar imagen 2 de 15">
+      <span class="g-tag">Est · 002 / 22</span>
+      <img src="fotos/collage/collage-02.jpeg" alt="Recuerdo 2" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕ ampliar</span>
+    </button>
+    <button type="button" class="g-item tile-c reveal" data-idx="2" aria-label="Ampliar imagen 3 de 15">
+      <span class="g-tag">Est · 003 / 22</span>
+      <img src="fotos/collage/collage-03.jpeg" alt="Recuerdo 3" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕ ampliar</span>
+    </button>
+    <button type="button" class="g-item tile-c reveal" data-idx="3" aria-label="Ampliar imagen 4 de 15">
+      <span class="g-tag">Est · 004 / 23</span>
+      <img src="fotos/collage/collage-04.jpeg" alt="Recuerdo 4" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕ ampliar</span>
+    </button>
+    <button type="button" class="g-item tile-d reveal" data-idx="4" aria-label="Ampliar imagen 5 de 15">
+      <span class="g-tag">Est · 005 / 23</span>
+      <img src="fotos/collage/collage-05.jpeg" alt="Recuerdo 5" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕</span>
+    </button>
+    <button type="button" class="g-item tile-d reveal" data-idx="5" aria-label="Ampliar imagen 6 de 15">
+      <span class="g-tag">Est · 006 / 23</span>
+      <img src="fotos/collage/collage-06.jpeg" alt="Recuerdo 6" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕</span>
+    </button>
+    <button type="button" class="g-item tile-d reveal" data-idx="6" aria-label="Ampliar imagen 7 de 15">
+      <span class="g-tag">Est · 007 / 23</span>
+      <img src="fotos/collage/collage-07.jpeg" alt="Recuerdo 7" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕</span>
+    </button>
+    <button type="button" class="g-item tile-b reveal" data-idx="7" aria-label="Ampliar imagen 8 de 15">
+      <span class="g-tag">Est · 008 / 24</span>
+      <img src="fotos/collage/collage-08.jpeg" alt="Recuerdo 8" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕ ampliar</span>
+    </button>
+    <button type="button" class="g-item tile-e reveal" data-idx="8" aria-label="Ampliar imagen 9 de 15">
+      <span class="g-tag">Est · 009 / 24</span>
+      <img src="fotos/collage/collage-09.jpeg" alt="Recuerdo 9" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕ ampliar</span>
+    </button>
+    <button type="button" class="g-item tile-e reveal" data-idx="9" aria-label="Ampliar imagen 10 de 15">
+      <span class="g-tag">Est · 010 / 24</span>
+      <img src="fotos/collage/collage-10.jpeg" alt="Recuerdo 10" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕ ampliar</span>
+    </button>
+    <button type="button" class="g-item tile-c reveal" data-idx="10" aria-label="Ampliar imagen 11 de 15">
+      <span class="g-tag">Est · 011 / 25</span>
+      <img src="fotos/collage/collage-11.jpeg" alt="Recuerdo 11" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕ ampliar</span>
+    </button>
+    <button type="button" class="g-item tile-c reveal" data-idx="11" aria-label="Ampliar imagen 12 de 15">
+      <span class="g-tag">Est · 012 / 25</span>
+      <img src="fotos/collage/collage-12.jpeg" alt="Recuerdo 12" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕ ampliar</span>
+    </button>
+    <button type="button" class="g-item tile-c reveal" data-idx="12" aria-label="Ampliar imagen 13 de 15">
+      <span class="g-tag">Est · 013 / 25</span>
+      <img src="fotos/collage/collage-13.jpeg" alt="Recuerdo 13" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕ ampliar</span>
+    </button>
+    <button type="button" class="g-item tile-c reveal" data-idx="13" aria-label="Ampliar imagen 14 de 15">
+      <span class="g-tag">Est · 014 / 26</span>
+      <img src="fotos/collage/collage-14.jpeg" alt="Recuerdo 14" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕ ampliar</span>
+    </button>
+    <button type="button" class="g-item tile-f reveal" data-idx="14" aria-label="Ampliar imagen 15 de 15">
+      <span class="g-tag">Est · 015 / 26 · panorámica</span>
+      <img src="fotos/collage/collage-15.jpeg" alt="Recuerdo 15" loading="lazy">
+      <span class="g-grad"></span><span class="g-zoom">⊕ ampliar</span>
+    </button>
+  </div>
+
+  <p class="menu-note" style="margin-top:24px">15 estudios archivados · navega con ← → o desliza en móvil</p>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de fotos" hidden>
+  <div class="lb-meta" id="lbMeta">1 / 15</div>
+  <button type="button" class="lb-close" id="lbClose" aria-label="Cerrar">✕</button>
+  <button type="button" class="lb-prev" id="lbPrev" aria-label="Anterior">‹</button>
+  <button type="button" class="lb-next" id="lbNext" aria-label="Siguiente">›</button>
+  <div class="lb-stage">
+    <img class="lb-img" id="lbImg" src="" alt="">
+  </div>
+</div>
+
+<!-- ============================================================
+     LUGAR + DETALLES
+     ============================================================ -->
+<section id="lugar">
+  <div class="section-head reveal">
+    <div class="kicker">Localización</div>
+    <h2>Hotel <em>Alameda Palace</em></h2>
+    <p>A dos minutos andando de la estación de Salamanca. Fácil para quien venga de fuera.</p>
+  </div>
+
+  <div class="details-grid">
+    <div class="map-wrap reveal">
+      <iframe
+        src="https://www.google.com/maps?q=Hotel+Alameda+Palace+Salamanca&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+    <div class="info-box reveal">
+      <h3>Cómo llegar</h3>
+      <p class="address">Paseo de la Estación, 1 · 37004 Salamanca</p>
+
+      <div class="detail">
+        <div class="icon">◉</div>
+        <div class="txt">
+          <strong>Dress code</strong>
+          <span>Elegancia con contraste. Traje / vestido de cóctel.</span>
+        </div>
+      </div>
+      <div class="detail">
+        <div class="icon">P</div>
+        <div class="txt">
+          <strong>Parking</strong>
+          <span>Parking propio del hotel y parking público a 2 min andando. Recomendado venir sin coche.</span>
+        </div>
+      </div>
+      <div class="detail">
+        <div class="icon">🚆</div>
+        <div class="txt">
+          <strong>Estación de tren</strong>
+          <span>A 150 m del hotel. Ideal si vienes desde fuera de Salamanca.</span>
+        </div>
+      </div>
+      <div class="detail">
+        <div class="icon">#</div>
+        <div class="txt">
+          <strong>Hashtag de la noche</strong>
+          <span>#R4RadioDx2026 — sube tus fotos y etiqueta al grupo.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LIBRO DE FIRMAS
+     ============================================================ -->
+<section id="firmas">
+  <div class="section-head reveal">
+    <div class="kicker">Libro de firmas</div>
+    <h2>Deja tu <em>informe</em> para los R4</h2>
+    <p>Una frase, un recuerdo, una anécdota, un consejo. Todo se proyectará durante la cena.</p>
+  </div>
+
+  <div class="signatures">
+    <form class="sig-form" id="sigForm" onsubmit="return addSignature(event)">
+      <input type="text" class="hp-field" id="sigHp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <input type="text" id="sigName" placeholder="Tu nombre" required maxlength="60" />
+      <textarea id="sigMsg" placeholder="Mensaje, anécdota o deseo para Nadia, Guille, Jesús y Ale…" required maxlength="400"></textarea>
+      <button type="submit" class="btn btn-primary">Firmar el informe</button>
+    </form>
+    <div class="sig-wall" id="sigWall">
+      <div class="sig-note">
+        <p>Felices por veros empezar esta nueva etapa. Cuatro años de aprender con vosotros — que no falte el cariño.</p>
+        <span class="author">— Adjuntos de la sección</span>
+      </div>
+      <div class="sig-note">
+        <p>Desde la uci os echaremos mucho de menos. ¡Suerte en lo que venga!</p>
+        <span class="author">— Compañeros de planta</span>
+      </div>
+      <div class="sig-note">
+        <p>Me quedo con las risas de las sesiones de los miércoles. Gracias por tanto.</p>
+        <span class="author">— R2 Radiología</span>
+      </div>
+    </div>
+    <p class="menu-note" style="margin-top:30px">Los mensajes se proyectarán durante la cena. Escribe con cariño.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     RSVP
+     ============================================================ -->
+<section id="rsvp">
+  <div class="section-head reveal">
+    <div class="kicker">Inscripción</div>
+    <h2>Confirma tu <em>asistencia</em></h2>
+    <p>Rellena el formulario antes del <strong>1 de mayo</strong>. Si vienes acompañado, indica cuántas personas extra vienen contigo (0 si vienes solo). Plazas limitadas por el aforo del salón.</p>
+  </div>
+
+  <div class="rsvp-box reveal">
+    <form class="sig-form" id="rsvpForm" onsubmit="return sendRsvp(event)" style="max-width:520px;margin:0 auto">
+      <input type="text" class="hp-field" id="rsvpHp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <input type="text" id="rsvpName" placeholder="Nombre completo" required maxlength="80" />
+      <input type="tel" id="rsvpPhone" placeholder="Teléfono (opcional)" maxlength="20" />
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:6px 0">
+        <label style="display:flex;align-items:center;gap:6px;cursor:pointer;color:var(--ink-soft);font-size:.9rem">
+          <input type="radio" name="rsvpAttend" value="Sí, asistiré" required style="accent-color:var(--gold)"> Sí, asistiré
+        </label>
+        <label style="display:flex;align-items:center;gap:6px;cursor:pointer;color:var(--ink-soft);font-size:.9rem">
+          <input type="radio" name="rsvpAttend" value="No puedo ir" style="accent-color:var(--accent)"> No puedo ir
+        </label>
+      </div>
+      <input type="number" id="rsvpGuests" placeholder="¿Cuántos venís en total?" min="1" max="6" value="1" style="max-width:320px;align-self:center" />
+      <p style="color:var(--ink-dim);font-size:.75rem;margin-top:-6px;text-align:center">Incluyéndote a ti. Ej: solo = 1, con pareja = 2.</p>
+      <textarea id="rsvpNotes" placeholder="Comentarios (opcional)" maxlength="300" style="min-height:70px"></textarea>
+      <button type="submit" class="btn btn-primary" style="align-self:center">Confirmar</button>
+    </form>
+    <div id="rsvpOk" style="display:none;text-align:center;padding:30px 16px">
+      <div style="font-size:2.5rem;margin-bottom:12px">&#10003;</div>
+      <p style="color:var(--ok);font-size:1.1rem;font-family:'Cormorant Garamond',serif;margin-bottom:6px">¡Registrado!</p>
+      <p style="color:var(--ink-soft);font-size:.9rem">Tu confirmación ha quedado guardada. Nos vemos el 15 de mayo.</p>
+      <span style="color:var(--ink-dim);font-size:.78rem;cursor:pointer;text-decoration:underline;margin-top:12px;display:inline-block" onclick="editRsvp()">Modificar respuesta</span>
+    </div>
+    <div class="vote-footer" style="margin-top:20px">
+      <span id="rsvpCount">0</span> confirmados
+      <button type="button" class="vote-refresh" id="rsvpRefresh" title="Actualizar" aria-label="Actualizar confirmados">&#x21bb;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="sig">Con cariño, de los R4 de Radiodiagnóstico</div>
+  <div class="contact">
+    Dudas · <a href="tel:+34608800489">+34 608 80 04 89</a> · María Escribano
+  </div>
+  <div class="hashtag">#R4RadioDx2026</div>
+  <p style="margin-top:22px;font-size:.75rem;color:var(--ink-dim)">Hotel Alameda Palace · Paseo de la Estación, 1 · 37004 Salamanca</p>
+</footer>
+
+<script>
+/* ============================================================
+   COUNTDOWN
+   ============================================================ */
+const target = new Date('2026-05-15T20:00:00+02:00').getTime();
+function pad(n){return String(n).padStart(2,'0')}
+function tick(){
+  const now = Date.now();
+  const diff = target - now;
+  if(diff<=0){
+    document.getElementById('cd-d').textContent='00';
+    document.getElementById('cd-h').textContent='00';
+    document.getElementById('cd-m').textContent='00';
+    document.getElementById('cd-s').textContent='00';
+    return;
+  }
+  const d = Math.floor(diff/86400000);
+  const h = Math.floor((diff%86400000)/3600000);
+  const m = Math.floor((diff%3600000)/60000);
+  const s = Math.floor((diff%60000)/1000);
+  document.getElementById('cd-d').textContent=pad(d);
+  document.getElementById('cd-h').textContent=pad(h);
+  document.getElementById('cd-m').textContent=pad(m);
+  document.getElementById('cd-s').textContent=pad(s);
+}
+tick();setInterval(tick,1000);
+
+/* ============================================================
+   REVEAL ON SCROLL
+   ============================================================ */
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
+},{threshold:.12});
+document.querySelectorAll('.reveal, .tl-item').forEach(el=>io.observe(el));
+
+/* ============================================================
+   NAV HIDE ON SCROLL DOWN
+   ============================================================ */
+let lastY=0;
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  if(y>120 && y>lastY) nav.classList.add('hidden');
+  else nav.classList.remove('hidden');
+  lastY=y;
+});
+
+/* ============================================================
+   FALLBACK ROBUSTO PARA FOTOS R4
+   ============================================================ */
+document.querySelectorAll('img.resident-img').forEach(img=>{
+  const showPlaceholder=()=>{
+    img.style.display='none';
+    const ph = img.parentElement && img.parentElement.querySelector('.placeholder-xray');
+    if(ph){ ph.hidden=false; ph.style.display='flex'; }
+  };
+  if(img.complete && img.naturalWidth===0) showPlaceholder();
+  img.addEventListener('error', showPlaceholder);
+});
+
+/* ============================================================
+   POST helper — Apps Script acepta form data sin CORS preflight
+   ============================================================ */
+function postToScript(payload){
+  if(!SCRIPT_URL) return Promise.resolve();
+  const fd = new FormData();
+  Object.entries(payload).forEach(([k,v])=> fd.append(k, v==null?'':v));
+  return fetch(SCRIPT_URL, {method:'POST', body:fd}).catch(e=>console.error('post:',e));
+}
+
+/* ============================================================
+   LIBRO DE FIRMAS — Google Apps Script
+   ============================================================ */
+function addSignature(ev){
+  ev.preventDefault();
+  // Honeypot
+  if(document.getElementById('sigHp').value) return false;
+
+  const name = document.getElementById('sigName').value.trim();
+  const msg  = document.getElementById('sigMsg').value.trim();
+  if(!name || !msg) return false;
+
+  // Añadir al muro inmediatamente
+  appendSigNote(name, msg, true);
+  document.getElementById('sigForm').reset();
+
+  // Enviar al backend
+  postToScript({action:'firma', name, msg});
+  return false;
+}
+
+function appendSigNote(name, msg, prepend){
+  const wall = document.getElementById('sigWall');
+  const note = document.createElement('div');
+  note.className='sig-note';
+  const p = document.createElement('p');
+  p.textContent = msg;
+  const author = document.createElement('span');
+  author.className = 'author';
+  author.textContent = '— ' + name;
+  note.append(p, author);
+  if(prepend) wall.prepend(note);
+  else wall.appendChild(note);
+}
+
+async function loadSignatures(){
+  if(!SCRIPT_URL) return;
+  try{
+    const r = await fetch(SCRIPT_URL+'?action=firmas');
+    const data = await r.json();
+    if(Array.isArray(data) && data.length){
+      // Limpiar los mensajes de ejemplo
+      document.getElementById('sigWall').innerHTML='';
+      data.forEach(s=> appendSigNote(s.name, s.msg, false));
+    }
+  }catch(e){ console.error('load firmas:',e); }
+}
+
+/* ============================================================
+   VOTACIÓN — Click-to-vote + Google Apps Script
+   ============================================================
+   CONFIGURACIÓN (5 min):
+
+   1. Ve a Google Drive → Nuevo → Google Sheets → ponle nombre "Votos Despedida"
+   2. En la hoja (Sheet1), escribe:
+        A1: 1    B1: 0
+        A2: 2    B2: 0
+        A3: 3    B3: 0
+        A4: 4    B4: 0
+   3. Ve a Extensiones → Apps Script
+   4. Borra el código que haya y pega el contenido del archivo
+      "apps-script-votos.js" que tienes en la carpeta del proyecto.
+   5. Haz clic en "Implementar" → "Nueva implementación"
+      → Tipo: "Aplicación web"
+      → Ejecutar como: "Yo"
+      → Quién tiene acceso: "Cualquier persona"
+      → Implementar → Copia la URL
+   6. Pega esa URL aquí abajo en SCRIPT_URL.
+   ============================================================ */
+
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwTZcFnqu_pJquWfjBBf211LaG7p5z4YUpwCOJVQpephuFhWoADksNOfAoXuJXB38f6/exec';
+const REFRESH_S  = 30;
+
+// Leer voto previo del usuario
+let myVote = localStorage.getItem('r4menu_vote') || null;
+
+// Marcar selección visual al cargar
+function markMyVote(){
+  document.querySelectorAll('.menu-card[data-menu]').forEach(c=>{
+    const mine = c.dataset.menu === myVote;
+    c.classList.toggle('selected', mine);
+    c.setAttribute('aria-pressed', mine ? 'true' : 'false');
+  });
+}
+
+function renderVotes(counts){
+  const total = Object.values(counts).reduce((a,b)=>a+b,0);
+  const max   = Math.max(...Object.values(counts),1);
+  let lead=null, leadN=0;
+  for(const[m,c] of Object.entries(counts)) if(c>leadN){leadN=c;lead=m;}
+
+  document.querySelectorAll('.menu-card[data-menu]').forEach(card=>{
+    const m   = card.dataset.menu;
+    const c   = counts[m]||0;
+    const pct = total>0 ? Math.round(c/total*100) : 0;
+    const bar = total>0 ? Math.round(c/max*100) : 0;
+
+    card.querySelector('.menu-vote-fill').style.width  = bar+'%';
+    card.querySelector('.menu-vote-pct').textContent    = pct+'%';
+    card.querySelector('.menu-vote-count').textContent   = c;
+    card.classList.toggle('leading', m===lead && leadN>0);
+  });
+
+  document.getElementById('voteTotal').textContent = total;
+}
+
+async function fetchVotes(){
+  if(!SCRIPT_URL){
+    // Demo: datos de ejemplo
+    renderVotes({'1':3,'2':7,'3':5,'4':2});
+    return;
+  }
+  try{
+    const r = await fetch(SCRIPT_URL+'?action=get');
+    const d = await r.json();
+    renderVotes(d);
+  }catch(e){ console.error('fetch votes:',e); }
+}
+
+async function castVote(menu){
+  if(menu === myVote) return; // Ya votaste por este
+
+  const oldVote = myVote;
+  myVote = menu;
+  localStorage.setItem('r4menu_vote', menu);
+  markMyVote();
+
+  // Optimistic UI: ajusta contadores locales inmediatamente
+  const cards = document.querySelectorAll('.menu-card[data-menu]');
+  const counts = {};
+  cards.forEach(c=>{
+    counts[c.dataset.menu] = parseInt(c.querySelector('.menu-vote-count').textContent)||0;
+  });
+  if(oldVote && counts[oldVote] > 0) counts[oldVote]--;
+  counts[menu] = (counts[menu]||0) + 1;
+  renderVotes(counts);
+
+  // Enviar al backend
+  await postToScript({action:'vote', menu, old: oldVote||''});
+  setTimeout(fetchVotes, 800);
+}
+
+// Click + teclado en cards de menú
+document.querySelectorAll('.menu-card[data-menu]').forEach(card=>{
+  const fire = ()=> castVote(card.dataset.menu);
+  card.addEventListener('click', fire);
+  card.addEventListener('keydown', e=>{
+    if(e.key==='Enter' || e.key===' '){ e.preventDefault(); fire(); }
+  });
+});
+
+// Inicializar
+markMyVote();
+fetchVotes();
+loadSignatures();
+setInterval(fetchVotes, REFRESH_S*1000);
+
+document.getElementById('voteRefresh').addEventListener('click',function(){
+  this.classList.add('spinning');
+  fetchVotes().then(()=>setTimeout(()=>this.classList.remove('spinning'),600));
+});
+document.getElementById('rsvpRefresh').addEventListener('click', loadRsvpCount);
+
+/* ============================================================
+   ALERGIAS / INTOLERANCIAS
+   ============================================================ */
+
+// Chips toggle
+document.querySelectorAll('.allergy-chip').forEach(chip=>{
+  chip.addEventListener('click',()=> chip.classList.toggle('active'));
+});
+
+// Recuperar si ya envió
+const savedAllergy = localStorage.getItem('r4_allergy');
+if(savedAllergy){
+  document.getElementById('allergyForm').style.display='none';
+  const ok = document.getElementById('allergyOk');
+  ok.style.display='block';
+}
+
+function editAllergy(){
+  document.getElementById('allergyForm').style.display='flex';
+  document.getElementById('allergyOk').style.display='none';
+  // Restaurar datos guardados
+  try{
+    const d = JSON.parse(localStorage.getItem('r4_allergy'));
+    if(d){
+      document.getElementById('allergyName').value = d.name||'';
+      document.getElementById('allergyNotes').value = d.notes||'';
+      document.querySelectorAll('.allergy-chip').forEach(c=>{
+        c.classList.toggle('active', (d.chips||[]).includes(c.dataset.val));
+      });
+    }
+  }catch(e){}
+}
+
+async function sendAllergy(ev){
+  ev.preventDefault();
+  if(document.getElementById('allergyHp').value) return false; // honeypot
+
+  const name  = document.getElementById('allergyName').value.trim();
+  const chips = [...document.querySelectorAll('.allergy-chip.active')].map(c=>c.dataset.val);
+  const notes = document.getElementById('allergyNotes').value.trim();
+
+  if(!name) return false;
+  if(chips.length===0 && !notes){
+    alert('Selecciona al menos una opción o escribe un detalle.');
+    return false;
+  }
+
+  const detail = [chips.join(', '), notes].filter(Boolean).join(' — ');
+  const data = {name, chips, notes};
+  localStorage.setItem('r4_allergy', JSON.stringify(data));
+
+  // Mostrar confirmación
+  document.getElementById('allergyForm').style.display='none';
+  document.getElementById('allergyOk').style.display='block';
+
+  await postToScript({action:'allergy', name, detail});
+  return false;
+}
+
+/* ============================================================
+   RSVP — CONFIRMACIÓN DE ASISTENCIA
+   ============================================================ */
+const savedRsvp = localStorage.getItem('r4_rsvp');
+if(savedRsvp){
+  document.getElementById('rsvpForm').style.display='none';
+  document.getElementById('rsvpOk').style.display='block';
+}
+
+function editRsvp(){
+  document.getElementById('rsvpForm').style.display='flex';
+  document.getElementById('rsvpOk').style.display='none';
+  try{
+    const d = JSON.parse(localStorage.getItem('r4_rsvp'));
+    if(d){
+      document.getElementById('rsvpName').value = d.name||'';
+      document.getElementById('rsvpPhone').value = d.phone||'';
+      document.getElementById('rsvpGuests').value = d.guests||0;
+      document.getElementById('rsvpNotes').value = d.notes||'';
+      const radios = document.querySelectorAll('input[name="rsvpAttend"]');
+      radios.forEach(r=>{ r.checked = r.value===d.attend; });
+    }
+  }catch(e){}
+}
+
+async function sendRsvp(ev){
+  ev.preventDefault();
+  if(document.getElementById('rsvpHp').value) return false; // honeypot
+
+  const name   = document.getElementById('rsvpName').value.trim();
+  const phone  = document.getElementById('rsvpPhone').value.trim();
+  const attend = document.querySelector('input[name="rsvpAttend"]:checked');
+  const guests = document.getElementById('rsvpGuests').value||'0';
+  const notes  = document.getElementById('rsvpNotes').value.trim();
+
+  if(!name || !attend) return false;
+
+  const data = {name, phone, attend:attend.value, guests, notes};
+  localStorage.setItem('r4_rsvp', JSON.stringify(data));
+
+  document.getElementById('rsvpForm').style.display='none';
+  document.getElementById('rsvpOk').style.display='block';
+
+  await postToScript({action:'rsvp', name, phone, attend: attend.value, guests, notes});
+  loadRsvpCount();
+  return false;
+}
+
+async function loadRsvpCount(){
+  if(!SCRIPT_URL) return;
+  try{
+    const r = await fetch(SCRIPT_URL+'?action=rsvpcount');
+    const d = await r.json();
+    document.getElementById('rsvpCount').textContent = d.count||0;
+  }catch(e){}
+}
+loadRsvpCount();
+
+/* ============================================================
+   GALERÍA · fade-in al cargar + LIGHTBOX (teclado + swipe)
+   ============================================================ */
+(function(){
+  // Fade-in cuando cada imagen termine de cargar
+  document.querySelectorAll('.gallery-grid img').forEach(img=>{
+    if(img.complete && img.naturalWidth>0) img.classList.add('loaded');
+    else img.addEventListener('load', ()=> img.classList.add('loaded'));
+    img.addEventListener('error', ()=> img.classList.add('loaded'));
+  });
+
+  const items = [...document.querySelectorAll('.gallery-grid .g-item')];
+  const total = items.length;
+  if(!total) return;
+
+  const lb     = document.getElementById('lightbox');
+  const lbImg  = document.getElementById('lbImg');
+  const lbMeta = document.getElementById('lbMeta');
+  const lbClose= document.getElementById('lbClose');
+  const lbPrev = document.getElementById('lbPrev');
+  const lbNext = document.getElementById('lbNext');
+  let current  = 0;
+  let lastFocus= null;
+
+  function show(i){
+    current = (i + total) % total;
+    const src = items[current].querySelector('img').src;
+    const alt = items[current].querySelector('img').alt || '';
+    lbImg.src = src;
+    lbImg.alt = alt;
+    lbMeta.textContent = `${current+1} / ${total}`;
+    // Precarga vecinas
+    [current-1, current+1].forEach(k=>{
+      const idx = (k+total)%total;
+      const pre = new Image();
+      pre.src = items[idx].querySelector('img').src;
+    });
+  }
+  function open(i){
+    lastFocus = document.activeElement;
+    lb.hidden = false;
+    lb.classList.add('open');
+    document.body.style.overflow='hidden';
+    show(i);
+    lbClose.focus();
+  }
+  function close(){
+    lb.classList.remove('open');
+    lb.hidden = true;
+    document.body.style.overflow='';
+    lbImg.src='';
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function next(){ show(current+1); }
+  function prev(){ show(current-1); }
+
+  items.forEach((el,i)=> el.addEventListener('click', ()=> open(i)));
+  lbClose.addEventListener('click', close);
+  lbPrev .addEventListener('click', prev);
+  lbNext .addEventListener('click', next);
+  lb.addEventListener('click', e=>{ if(e.target===lb || e.target.classList.contains('lb-stage')) close(); });
+
+  document.addEventListener('keydown', e=>{
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') close();
+    else if(e.key==='ArrowRight') next();
+    else if(e.key==='ArrowLeft')  prev();
+  });
+
+  // Swipe en móvil
+  let tx=0, ty=0;
+  lb.addEventListener('touchstart', e=>{
+    const t=e.changedTouches[0]; tx=t.clientX; ty=t.clientY;
+  }, {passive:true});
+  lb.addEventListener('touchend', e=>{
+    const t=e.changedTouches[0]; const dx=t.clientX-tx, dy=t.clientY-ty;
+    if(Math.abs(dx)>50 && Math.abs(dx)>Math.abs(dy)){
+      if(dx<0) next(); else prev();
+    } else if(dy>80 && Math.abs(dy)>Math.abs(dx)){
+      close();
+    }
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
